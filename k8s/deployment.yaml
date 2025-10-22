@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devops-starter
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: devops-starter
+  template:
+    metadata:
+      labels:
+        app: devops-starter
+    spec:
+      containers:
+        - name: web
+          image: devops/devops-starter:latest
+          ports:
+            - containerPort: 8000
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 8000
+            initialDelaySeconds: 5
+            periodSeconds: 5
