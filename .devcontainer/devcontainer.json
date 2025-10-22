@@ -1,0 +1,5 @@
+{
+  "name": "DevOps Starter",
+  "image": "mcr.microsoft.com/devcontainers/python:3.11",
+  "postCreateCommand": "pip install -r app/requirements.txt -r tests/requirements.txt"
+}
